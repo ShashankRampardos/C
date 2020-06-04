@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<conio.h>
 #include<windows.h>
@@ -10,7 +11,7 @@ start:
    printf("SIMPLE CALCULATOR");
    printf("\nPerform operation with two numbers and press enter after entering each number AND operator\n");
    scanf("%d",&a);
-   fflush(stdin);
+   fflush(stdin);//had input buffer problem so fflush() added here
    scanf("%c",&opt);
    fflush(stdin);
    switch(opt)                          //the operation will be like
