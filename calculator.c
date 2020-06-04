@@ -13,11 +13,11 @@ start:
    fflush(stdin);
    scanf("%c",&opt);
    fflush(stdin);
-   switch(opt)
-   {
-   case '+':
-    scanf("%d",&b);
-    printf("\n%d",a+b);
+   switch(opt)                          //the operation will be like
+   {                                    //234  (first number)
+   case '+':                            //*    (operator) 
+    scanf("%d",&b);                     //89   (second number)
+    printf("\n%d",a+b);                 //20826(result)
     break;
    case '-':
     scanf("%d",&b);
@@ -42,20 +42,20 @@ start:
     goto start;
    }
 middle:
-   printf("\nDo you want to continue(yes/no):");
+   printf("\nDo you want to continue(yes/no):");//below code to dont let program to stop itself but by user's command
    scanf("%c",&sel);
    fflush(stdin);
-   if(sel=='y'||sel=='Y')
+   if(sel=='y'||sel=='Y')//user will enter yes, Yes..or YES but we onlu check first letter whether it is Y or y.
    {   getch();
        system("cls");
-       goto start;
+       goto start;//if yes we jump to start of the program to Jump start tag name.
    }
-   else if(sel=='n'||sel=='N')
+   else if(sel=='n'||sel=='N')//same with no we check only first letter (N or n).
    {
        getch();
        exit(0);
    }
-   else
+   else//in case user enter any other word other than yes or no, the we jump to middle Jump tag.
    {  printf("\nEnter yes or no.");//control directly jump to else part without meeting to if or else if, why?(this happen only once then program runs correctly)
       getch();                     //is it cause of flush() between scanf and if, but removing it also gives trouble. 
       system("cls");
