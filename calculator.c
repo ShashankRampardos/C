@@ -2,8 +2,8 @@
 #include<windows.h>
 void main()
 {
-   int a,b;
-   char opt,sel;
+   int a,b;//to hold two numbers.
+   char opt,sel;//opt to hold operator and sel to hold y or n.
 start:
    printf("SIMPLE CALCULATOR");
    printf("\nPerform operation with two numbers and press enter after entering each number and operator\n");
