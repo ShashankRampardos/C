@@ -1,68 +1,64 @@
-
 #include<stdio.h>
-#include<conio.h>
 #include<windows.h>
-#include<process.h>
 void main()
 {
    int a,b;
    char opt,sel;
 start:
    printf("SIMPLE CALCULATOR");
-   printf("\nPerform operation with two numbers and press enter after entering each number AND operator\n");
+   printf("\nPerform operation with two numbers and press enter after entering each number and operator\n");
    scanf("%d",&a);
-   fflush(stdin);//had input buffer problem so fflush() added here
-   scanf("%c",&opt);
    fflush(stdin);
-   switch(opt)                          //the operation will be like
-   {                                    //234  (first number)
-   case '+':                            //*    (operator) 
-    scanf("%d",&b);                     //89   (second number)
-    printf("\n%d",a+b);                 //20826(result)
+   scanf("%c",&opt);
+   switch(opt)                          //(Operation will be like)
+   {                                    //24     (first number)
+   case '+'://in case of +.              //*      (Operator)
+    scanf("%d",&b);                     //43     (Second number)
+    printf("\n%d",a+b);                 //1032   (result)
     break;
-   case '-':
-    scanf("%d",&b);
+   case '-'://in case of -.
+    scanf("%d",&b);//operator input.
     printf("\n%d",a-b);
     break;
-   case '*':
+   case '*'://in case of *.
     scanf("%d",&b);
     printf("\n%d",a*b);
     break;
-   case '/':
+   case '/'://in case of /.
     scanf("%d",&b);
-    printf("\n%f",(float)a/b);
+    printf("\n%f",(float)a/b);//type casting.
     break;
-   case '%':
+   case '%'://in case of %.
     scanf("%d",&b);
-    printf("\n%f",a%b);
+    printf("\n%d",a%b);
     break;
-   default:
+   default://in case of wrong operator.
     printf("\nEnter right Operator \n(+ - * / %)");
     getch();
     system("cls");
     goto start;
    }
 middle:
-   printf("\nDo you want to continue(yes/no):");//below code to dont let program to stop itself but by user's command
-   scanf("%c",&sel);
-   fflush(stdin);
-   if(sel=='y'||sel=='Y')//user will enter yes, Yes..or YES but we onlu check first letter whether it is Y or y.
+   printf("\nDo you want to continue(yes/no):");
+   scanf("%c",&sel);//Issue 1:scanf() does not run in first time and control branch to ELSE part without taking input to "sel" variable, why? Please run the program to understand what I'm saying.
+   fflush(stdin);//User input yes or no which is a string but we check only first letter then remaining letters stay left in STDIN so fflush(STDIN) used here.
+   if(sel=='y'||sel=='Y')//in case of yes or Yes.
    {   getch();
        system("cls");
-       goto start;//if yes we jump to start of the program to Jump start tag name.
+       goto start;
    }
-   else if(sel=='n'||sel=='N')//same with no we check only first letter (N or n).
+   else if(sel=='n'||sel=='N')//in case of no or No.
    {
        getch();
        exit(0);
    }
-   else//in case user enter any other word other than yes or no, the we jump to middle Jump tag.
-   {  printf("\nEnter yes or no.");//control directly jump to else part without meeting to if or else if, why?(this happen only once then program runs correctly)
-      getch();                     //is it cause of flush() between scanf and if, but removing it also gives trouble. 
+   else//ISSUE 1 PART !:Control jump to here without checking if,why?
+   {  printf("\nPlease Enter yes or no.");//in case letter other than y,Y,n or N.
+      getch();
       system("cls");
       goto middle;
    }
-
+getch();
 
 }
 
