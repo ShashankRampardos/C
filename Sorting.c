@@ -56,6 +56,7 @@ min(float *a,short int n,short int *location)//take address of 0th element of ar
         *location=0;//will be 0 instead of previous location.
   }
 }
+-----------------------------------------------------------------------------------------
 //EXAMPLE:-
 //we have 3 0 5 1 4 2
 //first smallest number will assigned in array "sorted", 0 is smallest here.
@@ -67,7 +68,7 @@ min(float *a,short int n,short int *location)//take address of 0th element of ar
 //and all elements of array "a" will be destroyed.
 // when all elements of array "a" will destroyed then print array "sorted " elements
 //destroy array "sorted" elements or memory allocation.
-
+------------------------------------------------------------------------------------------
 
 
 
