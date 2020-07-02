@@ -6,7 +6,7 @@ main()
 {
     float *a,*sorted,swap;
     short int n,cpy_n;
-    short int i,j,location=0;
+    short int i,location=0;
 
  printf("Input number of element to be stored in array:");
  scanf("%hd",&n);
