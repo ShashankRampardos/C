@@ -46,7 +46,7 @@ min(float *a,short int n,short int *location)//take address of 0th element of ar
     char flag=1;
  min=*a;
   for(i=0;i<n;i++)
-  {
+  { flag=1;
       if(min>*(a+i)){
         min=*(a+i);
         *location=i;
