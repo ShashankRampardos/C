@@ -52,8 +52,8 @@ min(float *a,short int n,short int *location)//take address of 0th element of ar
         *location=i;
         flag=0;
       }
-      else if(flag)//in no element location found smaller than min then location
-        *location=0;//will be 0 instead of previous location.
+      else if(flag)//if no element location found smaller than min then we consider 0th location be the smallest element.
+        *location=0;//0 will be assigned if above statement true.
   }
 }
 -----------------------------------------------------------------------------------------
