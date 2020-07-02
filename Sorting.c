@@ -60,15 +60,31 @@ min(float *a,short int n,short int *location)//take address of 0th element of ar
 //EXAMPLE:-
 //we have 3 0 5 1 4 2
 //first smallest number will assigned in array "sorted", 0 is smallest here.
-//then 0 will and last element of array "a" swapped.
+//then 0 and last element of array "a" will swapped.
 //like 3 2 5 1 4 0, number of elements are 6.
 //then last element of array "a" will be destroyed.
 //we get 3 2 5 1 4, number of elements are 5.
+//then again smallest element will stored in array "sorted" and smallest element and last element will be swapped, then last elemint will be destroyed by free() function.   
 //same process will be done until all elements stored in array "sorted" in Ascending order
-//and all elements of array "a" will be destroyed.
+//and all elements(last element) of array "a" will be destroyed.
 // when all elements of array "a" will destroyed then print array "sorted " elements
-//destroy array "sorted" elements or memory allocation.
-------------------------------------------------------------------------------------------
+//destroy array "sorted" elements or memory allocation by free() function.
+//EXAMPLE:  
+  //let numbers be
+  //array "a"= 3 0 5 1 4 2                                                      | array "sorted"=         0 
+  //           3 2 5 1 4 0(0 will be destroyed)                                 | 
+  //           3 2 5 1 4                                                        |
+  //           3 2 5 4 1(1 will be destroyed)                                   |                         1
+  //           3 2 5 4                                                          |
+  //           3 4 5 2(2 will be destroyed)                                     |                         2
+  //           3 4 5                                                            |
+  //           5 4 3(3 will be destroyed)                                       |                         3 
+  //           5 4                                                              |
+  //           5 4 (4 will be destroyed)                                        |                         4
+  //           5(only 1 element remain in array "a" and it will also destoryed) |                         5
+  // net result:                                                                |
+  //  array "a"=does not exist now.                                             | array "sorted"=0 1 2 3 4 5    
+    ------------------------------------------------------------------------------------------
 
 
 
