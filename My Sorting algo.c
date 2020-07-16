@@ -46,15 +46,15 @@ min(float *a,short int n,short int *location)//take address of 0th element of ar
     char flag=1;
  min=*a;
   for(i=0;i<n;i++)
-  { flag=1;
+  {
       if(min>*(a+i)){
         min=*(a+i);
         *location=i;
         flag=0;
       }
-      else if(flag)//if no element location found smaller than min then we consider 0th location be the smallest element.
-        *location=0;//0 will be assigned if above statement true.
   }
+  if(flag)//in no element location found smaller than min then location
+    *location=0;//will be 0 instead of previous location.
 }
 -----------------------------------------------------------------------------------------
 //EXAMPLE:-
